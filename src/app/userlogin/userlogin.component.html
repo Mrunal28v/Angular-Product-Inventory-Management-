@@ -1,0 +1,32 @@
+<!-- <p>userlogin works!</p> -->
+ <!-- <p>userregistration works!</p> -->
+<div>
+    <h2>User Sign In</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+     
+  
+      <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email" required >
+        <!-- <div *ngIf="f.email.touched && f.email.invalid">
+          <small *ngIf="f.email.errors?.required">Email is required.</small>
+          <small *ngIf="f.email.errors?.email">Invalid email format.</small>
+        </div> -->
+      </div>
+  
+      <div>
+        <label>Password:</label>
+        <input type="password" formControlName="password" required >
+        <!-- <div *ngIf="submitted && registrationForm.controls.password.errors">
+          <span *ngIf="registrationForm.controls.password.errors.required">Password is required.</span>
+          <span *ngIf="registrationForm.controls.password.errors.minlength">Password must be at least 6 characters.</span>
+        </div> -->
+      </div>
+  
+      
+      <button type="submit">Login</button>
+      <p>&copy; 2024 Products Inventory</p>
+    </form>
+  </div>
+  

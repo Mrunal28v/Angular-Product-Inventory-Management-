@@ -1,0 +1,43 @@
+<!-- <p>userregistration works!</p> -->
+<div class="container">
+    <h2>Register</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      
+       
+      <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email">
+      </div>
+  
+      <div>
+        <label>Password:</label>
+        <input type="password" formControlName="password">
+      </div>
+  
+      <div>
+        <label>First Name:</label>
+        <input type="name" formControlName="name">
+      </div>
+
+      <div>
+        <label>Last Name:</label>
+        <input type="lastname" formControlName="lastname">
+      </div>
+
+      <div>
+        <label>Location:</label>
+        <input type="location" formControlName="location">
+      </div>
+
+      <div>
+        <label>Mobile Number:</label>
+        <input type="number" formControlName="number">        
+      </div>
+  
+      <button type="submit">
+        <a routerLink="/userlogin-component" routerLinkActive="active">Register</a>
+      </button>
+      <p>&copy; 2024 Products Inventory</p>
+    </form>
+  </div>
+  

@@ -1,0 +1,74 @@
+<div class="container" >
+  <!-- <form [formGroup]="productlistForm" > -->
+       <h2>Product List</h2>
+
+<table mat-table [dataSource]="products"  class="mat-elevation-z8">
+  
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let product of products"> {{product.name | uppercase }} </td>
+  </ng-container>
+
+   <!-- description Column -->
+   <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Description </th>
+    <td mat-cell *matCellDef="let product"> {{product.description}} </td>
+  </ng-container>
+
+   <!-- description Column -->
+   <ng-container matColumnDef="manufacturer">
+    <th mat-header-cell *matHeaderCellDef> Manufacturer </th>
+    <td mat-cell *matCellDef="let product "> {{product.manufacturer}} </td>
+  </ng-container>
+  
+
+  <!-- category Column -->
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef> Category </th>
+    <td mat-cell *matCellDef="let product"> {{product.category}} </td>
+  </ng-container>
+
+   <!-- Proce Column -->
+   <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let product "> {{product.price}} </td>
+  </ng-container>
+
+  <!-- Quantity Column -->
+  <ng-container matColumnDef="quantity">
+    <th mat-header-cell *matHeaderCellDef> Quantity </th>
+    <td mat-cell *matCellDef="let product"> {{product.quantity}}  </td>
+  
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let product">
+      <button mat-button color="accent" (click)="viewRow(product)">View</button>
+      <button mat-button color="primary" (click)="editRow(product)">Edit</button>
+      <button mat-button color="warn" (click)="deleteRow(product)">Delete</button>
+    </td>
+  </ng-container>
+
+  <!-- Header and Row Definitions -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"><button mat-raised-button color="primary" (click)="addRow()">Add New Row</button></tr>
+
+  
+</table>
+<table>
+  <tr>
+    <div>
+      <button mat-raised-button color="primary" (click)="addRow()">Add Product</button>
+   </div>
+  </tr>
+  <tr>
+    <p>&copy; 2024 Products Inventory</p>
+  </tr>
+</table>
+
+  
+
+
